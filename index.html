@@ -1,13 +1,14 @@
 <!-- login.html -->
+<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="style.css">
 
  ID:<input type=text name=id>
  PW:<input type=password name=pw>
- <input type=checkbox name=autologin checked>ÀÚµ¿ ·Î±×ÀÎ
- <input type=submit value="·Î±×ÀÎ"> &nbsp;
+ <input type=checkbox name=autologin checked>ìë™ ë¡œê·¸ì¸
+ <input type=submit value="ë¡œê·¸ì¸"> &nbsp;
 <fieldset>
   <legend>Select a maintenance drone:</legend>
-<button onclick="navigateToIndex()">Å¬¸¯ÇÏ¼¼¿ä</button>
+<button onclick="navigateToIndex()">í´ë¦­í•˜ì„¸ìš”</button>
 
   <div>
     <input type="radio" id="huey" name="drone" value="huey" checked />
@@ -36,14 +37,13 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.querySelector('input[type="submit"]');
-    const userIdInput = document.querySelector('input[name="id"]');  // ¾ÆÀÌµğ ÀÔ·Â ÇÊµå Ã£±â
-
+    const userIdInput = document.querySelector('input[name="id"]');  // 
     loginButton.addEventListener('click', function(event) {
-        event.preventDefault();  // ÆûÀÇ ±âº» Á¦Ãâ ±â´ÉÀ» ¸·À½
-        const userId = userIdInput.value;  // ÀÔ·Â ÇÊµå¿¡¼­ ¾ÆÀÌµğ °ªÀ» °¡Á®¿È
-        const popupWindow = window.open('', 'ID Display', 'width=400,height=200');  // »õ ÆË¾÷ À©µµ¿ì »ı¼º
-        popupWindow.document.write('<p>¾ÆÀÌµğ´Â: ' + userId + '</p>');  // ÆË¾÷ À©µµ¿ì¿¡ ¾ÆÀÌµğ Ç¥½Ã
-        popupWindow.document.close();  // ÆË¾÷ À©µµ¿ìÀÇ ¹®¼­ ÀÛ¼º ¿Ï·á
+        event.preventDefault();  
+        const userId = userIdInput.value;  
+        const popupWindow = window.open('', 'ID Display', 'width=400,height=200');  
+        popupWindow.document.write('<p>ì•„ì´ë””ëŠ”: ' + userId + '</p>');  
+        popupWindow.document.close(); 
     });
 });
 
