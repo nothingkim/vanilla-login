@@ -1,0 +1,51 @@
+<!-- login.html -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+ ID:<input type=text name=id>
+ PW:<input type=password name=pw>
+ <input type=checkbox name=autologin checked>자동 로그인
+ <input type=submit value="로그인"> &nbsp;
+<fieldset>
+  <legend>Select a maintenance drone:</legend>
+<button onclick="navigateToIndex()">클릭하세요</button>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey" checked />
+    <label for="huey">Huey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">Dewey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="louie" name="drone" value="louie" />
+    <label for="louie">Louie</label>
+  </div>
+</fieldset>
+<label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.querySelector('input[type="submit"]');
+    const userIdInput = document.querySelector('input[name="id"]');  // 아이디 입력 필드 찾기
+
+    loginButton.addEventListener('click', function(event) {
+        event.preventDefault();  // 폼의 기본 제출 기능을 막음
+        const userId = userIdInput.value;  // 입력 필드에서 아이디 값을 가져옴
+        const popupWindow = window.open('', 'ID Display', 'width=400,height=200');  // 새 팝업 윈도우 생성
+        popupWindow.document.write('<p>아이디는: ' + userId + '</p>');  // 팝업 윈도우에 아이디 표시
+        popupWindow.document.close();  // 팝업 윈도우의 문서 작성 완료
+    });
+});
+
+
+</script>
