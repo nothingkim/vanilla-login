@@ -1,1 +1,1 @@
-# vanilla-login
+# vanillalogin
